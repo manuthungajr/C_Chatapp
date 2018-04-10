@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-Chatapp" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Chatapp"/>
+        <property name="wsdl-Chatapp" location="xml-resources/web-service-references/Chatapp/wsdl/localhost_8080/WebApplication/Chatapp.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Chatapp" destdir="${build.generated.dir}/jax-wsCache/Chatapp" wsdl="${wsdl-Chatapp}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication/Chatapp?wsdl" xnocompile="true" xendorsed="true" package="webmaterials">
+            <depends file="${wsdl-Chatapp}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Chatapp"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Chatapp">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Chatapp" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Chatapp"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webmaterials"/>
+    </target>
+    <target name="wsimport-client-registerU" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/registerU"/>
+        <property name="wsdl-registerU" location="xml-resources/web-service-references/registerU/wsdl/localhost_8080/WebApplication/registerU.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/registerU" destdir="${build.generated.dir}/jax-wsCache/registerU" wsdl="${wsdl-registerU}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication/registerU?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-registerU}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/registerU"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/registerU">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-registerU" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/registerU"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/chatapplication"/>
+    </target>
+    <target name="wsimport-client-Thread" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Thread"/>
+        <property name="wsdl-Thread" location="xml-resources/web-service-references/Thread/wsdl/localhost_8080/WebApplication/Thread.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Thread" destdir="${build.generated.dir}/jax-wsCache/Thread" wsdl="${wsdl-Thread}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebApplication/Thread?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-Thread}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Thread"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Thread">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Thread" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Thread"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/thread"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Chatapp, wsimport-client-registerU, wsimport-client-Thread"/>
+</project>
